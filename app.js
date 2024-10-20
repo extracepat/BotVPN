@@ -149,7 +149,7 @@ async function sendMainMenu(ctx) {
   }
 
   const messageText = `*Selamat datang di ${NAMA_STORE},
-Powered by Ceria_Shop* 🚀
+OWNER @ceria_shop * 🚀
 Bot VPN serba otomatis untuk membeli
 layanan VPN dengan mudah dan cepat
 Nikmati kemudahan dan kecepatan
@@ -558,20 +558,20 @@ async function handleServiceAction(ctx, action) {
   let keyboard;
   if (action === 'create') {
     keyboard = [
-      [{ text: 'CREATE SSH 🥭', callback_data: 'create_ssh' }],      
-      [{ text: 'CREATE VMESS 🥭', callback_data: 'create_vmess' }],
-      [{ text: 'CREATE VLESS 🥭', callback_data: 'create_vless' }],
-      [{ text: 'CREATE TORJAN 🥭', callback_data: 'create_trojan' }],
-      [{ text: 'CREATE SHADOW 🥭', callback_data: 'create_shadowsocks' }],
+      [{ text: '🥭 CREATE SSH 🥭', callback_data: 'create_ssh' }],      
+      [{ text: '🥭 CREATE VMESS 🥭', callback_data: 'create_vmess' }],
+      [{ text: '🥭 CREATE VLESS 🥭', callback_data: 'create_vless' }],
+      [{ text: '🥭 CREATE TORJAN 🥭', callback_data: 'create_trojan' }],
+      [{ text: '🥭 CREATE SHADOW 🥭', callback_data: 'create_shadowsocks' }],
       [{ text: '🔙 Kembali', callback_data: 'send_main_menu' }]
     ];
   } else if (action === 'renew') {
     keyboard = [
-      [{ text: 'Perpanjang Ssh 🥭', callback_data: 'renew_ssh' }],      
-      [{ text: 'Perpanjang Vmess 🥭', callback_data: 'renew_vmess' }],
-      [{ text: 'Perpanjang Vless 🥭', callback_data: 'renew_vless' }],
-      [{ text: 'Perpanjang Trojan 🥭', callback_data: 'renew_trojan' }],
-      [{ text: 'Perpanjang Shadowsocks 🥭', callback_data: 'renew_shadowsocks' }],
+      [{ text: '🥭 Perpanjang Ssh 🥭', callback_data: 'renew_ssh' }],      
+      [{ text: '🥭 Perpanjang Vmess 🥭', callback_data: 'renew_vmess' }],
+      [{ text: '🥭 Perpanjang Vless 🥭', callback_data: 'renew_vless' }],
+      [{ text: '🥭 Perpanjang Trojan 🥭', callback_data: 'renew_trojan' }],
+      [{ text: '🥭 Perpanjang Shadowsocks 🥭', callback_data: 'renew_shadowsocks' }],
       [{ text: '🔙 Kembali', callback_data: 'send_main_menu' }]
     ];
   } 
