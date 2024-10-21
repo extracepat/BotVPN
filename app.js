@@ -19,7 +19,7 @@ const PAYDISINI_KEY = vars.PAYDISINI_KEY;
 const BOT_TOKEN = vars.BOT_TOKEN;
 const port = vars.PORT || 50123;
 const ADMIN = vars.USER_ID; 
-const NAMA_STORE = vars.NAMA_STORE || '@FTVPNSTORES';
+const NAMA_STORE = vars.NAMA_STORE || '@ceria_shop';
 const bot = new Telegraf(BOT_TOKEN);
 const adminIds = ADMIN;
 console.log('Bot initialized');
@@ -105,13 +105,16 @@ bot.command('admin', async (ctx) => {
 async function sendMainMenu(ctx) {
   const keyboard = [
     [
-      { text: '➕ Buat Akun', callback_data: 'service_create' },
-      { text: '♻️ Perpanjang Akun', callback_data: 'service_renew' }
+      { text: '〘 ᴄʀᴇᴀᴛᴇ ᴀᴋᴜɴ 〙', callback_data: 'service_create' },
+      { text: '〘 ʀᴇɴᴇᴡ akun 〙', callback_data: 'service_renew' }
     ],
     [
-      { text: '💰 TopUp Saldo', callback_data: 'topup_saldo' },
-      { text: '💳 Cek Saldo', callback_data: 'cek_saldo' }
+      { text: '〘 ᴛᴏᴘ ᴜᴘ ᴏᴛᴏᴍᴀᴛɪs 〙', callback_data: 'topup_saldo' },
+      { text: '〘 ᴄᴇᴋ sᴀʟᴅᴏ 〙', callback_data: 'cek_saldo' }
     ],
+    [
+      { text: '〘 ᴄᴏsᴛᴜᴍᴇʀ sᴇʀᴠɪᴄᴇ 〙', callback_data: 'https://t.me/ceria_shop' },
+      { text: '〘 ɢʀᴜʙ ᴘᴜʙʟɪᴋ 〙', callback_data: 'https://t.me/pasar_vpn' }
   ];
 
   const uptime = os.uptime();
@@ -130,7 +133,7 @@ async function sendMainMenu(ctx) {
     });
     jumlahServer = row.count;
   } catch (err) {
-    console.error('Kesalahan saat mengambil jumlah server:', err.message);
+    console.error('ᴋᴇsᴀʟᴀʜᴀɴ sᴀᴀᴛ ᴍᴇɴɢᴀᴍʙɪʟ ᴊᴜᴍʟᴀ sᴇʀᴠᴇʀ :', err.message);
   }
   let jumlahPengguna = 0;
   try {
@@ -145,21 +148,23 @@ async function sendMainMenu(ctx) {
     });
     jumlahPengguna = row.count;
   } catch (err) {
-    console.error('Kesalahan saat mengambil jumlah pengguna:', err.message);
+    console.error('ᴋᴇsᴀʟᴀʜᴀɴ sᴀᴀᴛ ᴍᴇɴɢᴀᴍʙɪʟ ᴊᴜᴍʟᴀʜ ᴘᴇɴɢɢᴜɴᴀ :', err.message);
   }
 
-  const messageText = `*Selamat datang di ${NAMA_STORE},
-OWNER @ceria_shop * 🚀
-Bot VPN serba otomatis untuk membeli
-layanan VPN dengan mudah dan cepat
-Nikmati kemudahan dan kecepatan
-dalam layanan VPN dengan bot kami!
-
-⏳ *Uptime bot:* ${days} Hari
-🌐 *Server tersedia:* ${jumlahServer}
-👥 *Jumlah pengguna:* ${jumlahPengguna}
-
-*Silakan pilih opsi layanan:*`;
+  const messageText = `*sᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ ᴅɪ ${NAMA_STORE},*
+🧿━━━━━━━━━━━━━━━━━━━━━━━━🧿
+ʙᴏᴛ ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴛᴏᴍᴀᴛɪs ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʟɪ
+ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴅᴇɴɢᴀɴ ᴍᴜᴅᴀʜ ᴅᴀɴ ᴄᴇᴘᴀᴛ
+ɴɪᴋᴍᴀᴛɪ ᴋᴇᴍᴜᴅᴀʜᴀɴ ᴅᴀɴ ᴋᴇᴄᴇᴘᴀᴛᴀɴ
+ᴅᴀʟᴀᴍ ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴅᴇɴɢᴀɴ ʙᴏᴛ ᴋᴀᴍɪ!
+🧿━━━━━━━━━━━━━━━━━━━━━━━━🧿
+⏳ *ᴜᴘᴛɪᴍᴇ ʙᴏᴛ:* ${days} Hari
+🌐 *sᴇʀᴠᴇʀ ᴛᴇʀsᴇᴅɪᴀ:* ${jumlahServer}
+👥 *ᴊᴜᴍʟᴀʜ ᴘᴇɴɢɢᴜɴᴀ:* ${jumlahPengguna}
+📣 *ᴀᴜᴛʜᴏʀ: [ᴋʟɪᴋ ᴅɪ sɪɴɪ](https://t.me/ceria_shop) 
+🧿━━━━━━━━━━━━━━━━━━━━━━━━🧿
+🆔 *ɪᴅ ᴀɴᴅᴀ:* ${userId}
+*sɪʟᴀᴋᴀɴ ᴘɪʟɪʜ ᴏᴘsɪ ʟᴀʏᴀɴᴀɴ:*`;
 
   try {
     await ctx.editMessageText(messageText, {
@@ -215,8 +220,8 @@ bot.command('broadcast', async (ctx) => {
   const userId = ctx.message.from.id;
   console.log(`Broadcast command received from user_id: ${userId}`);
   if (!adminIds.includes(userId)) {
-      console.log(`⚠️ User ${userId} tidak memiliki izin untuk menggunakan perintah ini.`);
-      return ctx.reply('⚠️ Anda tidak memiliki izin untuk menggunakan perintah ini.', { parse_mode: 'Markdown' });
+      console.log(`⚠️ ᴜsᴇʀ ${userId} ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ.`);
+      return ctx.reply('⚠️ ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ.', { parse_mode: 'Markdown' });
   }
 
   const message = ctx.message.reply_to_message ? ctx.message.reply_to_message.text : ctx.message.text.split(' ').slice(1).join(' ');
@@ -237,24 +242,24 @@ bot.command('broadcast', async (ctx) => {
               chat_id: row.user_id,
               text: message
           }).then(() => {
-              console.log(`✅ Pesan siaran berhasil dikirim ke ${row.user_id}`);
+              console.log(`✅ ᴘᴇsᴀɴ sɪᴀʀᴀɴ ʙᴇʀʜᴀsɪʟ ᴅɪᴋɪʀɪᴍ ᴋᴇ ${row.user_id}`);
           }).catch((error) => {
-              console.error(`⚠️ Kesalahan saat mengirim pesan siaran ke ${row.user_id}`, error.message);
+              console.error(`⚠️ ᴋᴇsᴀʟᴀʜᴀɴ sᴀᴀᴛ ᴍᴇɴɢɪʀɪᴍ ᴘᴇsᴀɴ sɪᴀʀᴀɴ ᴋᴇ ${row.user_id}`, error.message);
           });
       });
 
-      ctx.reply('✅ Pesan siaran berhasil dikirim.', { parse_mode: 'Markdown' });
+      ctx.reply('✅ ᴘᴇsᴀɴ sɪᴀʀᴀɴ ʙᴇʀʜᴀsɪʟ ᴅɪᴋɪʀɪᴍ.', { parse_mode: 'Markdown' });
   });
 });
 bot.command('addsaldo', async (ctx) => {
   const userId = ctx.message.from.id;
   if (!adminIds.includes(userId)) {
-      return ctx.reply('⚠️ Anda tidak memiliki izin untuk menggunakan perintah ini.', { parse_mode: 'Markdown' });
+      return ctx.reply('⚠️ ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ.', { parse_mode: 'Markdown' });
   }
 
   const args = ctx.message.text.split(' ');
   if (args.length !== 3) {
-      return ctx.reply('⚠️ Format salah. Gunakan: `/addsaldo <user_id> <jumlah>`', { parse_mode: 'Markdown' });
+      return ctx.reply('⚠️ ғᴏʀᴍᴀᴛ sᴀʟᴀʜ. ɢᴜɴᴀᴋᴀɴ: `/addsaldo <user_id> <jumlah>`', { parse_mode: 'Markdown' });
   }
 
   const targetUserId = parseInt(args[1]);
@@ -288,7 +293,7 @@ bot.command('addsaldo', async (ctx) => {
               return ctx.reply('⚠️ Pengguna tidak ditemukan.', { parse_mode: 'Markdown' });
           }
 
-          ctx.reply(`✅ Saldo sebesar \`${amount}\` berhasil ditambahkan untuk \`user_id\` \`${targetUserId}\`.`, { parse_mode: 'Markdown' });
+          ctx.reply(`✅ sᴀʟᴅᴏ sᴇʙᴇsᴀʀ \`${amount}\` ʙᴇʀʜᴀsɪʟ ᴅɪᴛᴀᴍʙᴀʜᴋᴀɴ ᴜɴᴛᴜᴋ \`user_id\` \`${targetUserId}\`.`, { parse_mode: 'Markdown' });
       });
   });
 });
@@ -558,20 +563,20 @@ async function handleServiceAction(ctx, action) {
   let keyboard;
   if (action === 'create') {
     keyboard = [
-      [{ text: '🥭 CREATE SSH 🥭', callback_data: 'create_ssh' }],      
-      [{ text: '🥭 CREATE VMESS 🥭', callback_data: 'create_vmess' }],
-      [{ text: '🥭 CREATE VLESS 🥭', callback_data: 'create_vless' }],
-      [{ text: '🥭 CREATE TORJAN 🥭', callback_data: 'create_trojan' }],
-      [{ text: '🥭 CREATE SHADOW 🥭', callback_data: 'create_shadowsocks' }],
-      [{ text: '🔙 Kembali', callback_data: 'send_main_menu' }]
+      [{ text: '🥭 ᴄʀᴇᴀᴛᴇ ssʜ 🥭', callback_data: 'create_ssh' }],      
+      [{ text: '🥭 ᴄʀᴇᴀᴛᴇ ᴠᴍᴇss 🥭', callback_data: 'create_vmess' }],
+      [{ text: '🥭 ᴄʀᴇᴀᴛᴇ ᴠʟᴇss 🥭', callback_data: 'create_vless' }],
+      [{ text: '🥭 ᴄʀᴇᴀᴛᴇ ᴛᴏʀᴊᴀɴ 🥭', callback_data: 'create_trojan' }],
+      [{ text: '🥭 ᴄʀᴇᴀᴛᴇ sʜᴀᴅᴏᴡ 🥭', callback_data: 'create_shadowsocks' }],
+      [{ text: '🔙 ᴋᴇᴍʙᴀʟɪ', callback_data: 'send_main_menu' }]
     ];
   } else if (action === 'renew') {
     keyboard = [
-      [{ text: '🥭 Perpanjang Ssh 🥭', callback_data: 'renew_ssh' }],      
-      [{ text: '🥭 Perpanjang Vmess 🥭', callback_data: 'renew_vmess' }],
-      [{ text: '🥭 Perpanjang Vless 🥭', callback_data: 'renew_vless' }],
-      [{ text: '🥭 Perpanjang Trojan 🥭', callback_data: 'renew_trojan' }],
-      [{ text: '🥭 Perpanjang Shadowsocks 🥭', callback_data: 'renew_shadowsocks' }],
+      [{ text: '🥭 ᴘᴇʀᴘᴀɴᴊᴀɴɢ ssʜ 🥭', callback_data: 'renew_ssh' }],      
+      [{ text: '🥭 ᴘᴇʀᴘᴀɴᴊᴀɴɢ ᴠᴍᴇss 🥭', callback_data: 'renew_vmess' }],
+      [{ text: '🥭 ᴘᴇʀᴘᴀɴᴊᴀɴɢ ᴠʟᴇss 🥭', callback_data: 'renew_vless' }],
+      [{ text: '🥭 ᴘᴇʀᴘᴀɴᴊᴀɴɢ ᴛʀᴏᴊᴀɴ 🥭', callback_data: 'renew_trojan' }],
+      [{ text: '🥭 ᴘᴇʀᴘᴀɴᴊᴀɴɢ sʜᴀᴅᴏᴡsᴏᴄᴋs 🥭', callback_data: 'renew_shadowsocks' }],
       [{ text: '🔙 Kembali', callback_data: 'send_main_menu' }]
     ];
   } 
@@ -583,7 +588,7 @@ async function handleServiceAction(ctx, action) {
   } catch (error) {
     if (error.response && error.response.error_code === 400) {
       // Jika pesan tidak dapat diedit, kirim pesan baru
-      await ctx.reply(`Pilih jenis layanan yang ingin Anda ${action}:`, {
+      await ctx.reply(`ᴘɪʟɪʜ ᴊᴇɴɪs ʟᴀʏᴀɴᴀɴ ʏᴀɴɢ ɪɴɢɪɴ ᴀɴᴅᴀ ${action}:`, {
         reply_markup: {
           inline_keyboard: keyboard
         }
@@ -788,28 +793,28 @@ async function startSelectServer(ctx, action, type, page = 0) {
       if (navButtons.length > 0) {
         keyboard.push(navButtons);
       }
-      keyboard.push([{ text: '🔙 Kembali ke Menu Utama', callback_data: 'send_main_menu' }]);
+      keyboard.push([{ text: '🔙 ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ ᴜᴛᴀᴍᴀ', callback_data: 'send_main_menu' }]);
 
       const serverList = currentServers.map(server => {
         const hargaPer30Hari = server.harga * 30; 
         const isFull = server.total_create_akun >= server.batas_create_akun;
         return `🌐 *${server.nama_server}*\n` +
-               `💰 Harga per hari: Rp${server.harga}\n` +
-               `📅 Harga per 30 hari: Rp${hargaPer30Hari}\n` +
-               `📊 Quota: ${server.quota}GB\n` +
-               `🔢 Limit IP: ${server.iplimit} IP\n` +
-               (isFull ? `⚠️ *Server Penuh*` : `👥 Total Create Akun: ${server.total_create_akun}/${server.batas_create_akun}`);
+               `💰 ʜᴀʀɢᴀ ᴘᴇʀʜᴀʀɪ: Rp${server.harga}\n` +
+               `📅 ʜᴀʀɢᴀ sᴇʙᴜʟᴀɴ: Rp${hargaPer30Hari}\n` +
+               `📊 ǫᴜᴏᴛᴀ: ${server.quota}GB\n` +
+               `🔢 ʟɪᴍɪᴛ ɪᴘ: ${server.iplimit} IP\n` +
+               (isFull ? `⚠️ *sᴇʀᴠᴇʀ ᴘᴇɴᴜʜ*` : `👥 ᴛᴏᴛᴀʟ ᴄʀᴇᴀᴛᴇ ᴀᴋᴜɴ: ${server.total_create_akun}/${server.batas_create_akun}`);
       }).join('\n\n');
 
       if (ctx.updateType === 'callback_query') {
-        ctx.editMessageText(`📋 *List Server (Halaman ${currentPage + 1} dari ${totalPages}):*\n\n${serverList}`, {
+        ctx.editMessageText(`📋 *ʟɪsᴛ sᴇʀᴠᴇʀ (ʜᴀʟᴀᴍᴀɴ ${currentPage + 1} dari ${totalPages}):*\n\n${serverList}`, {
           reply_markup: {
             inline_keyboard: keyboard
           },
           parse_mode: 'Markdown'
         });
       } else {
-        ctx.reply(`📋 *List Server (Halaman ${currentPage + 1} dari ${totalPages}):*\n\n${serverList}`, {
+        ctx.reply(`📋 *ʟɪsᴛ sᴇʀᴠᴇʀ (ʜᴀʟᴀᴍᴀɴ ${currentPage + 1} dari ${totalPages}):*\n\n${serverList}`, {
           reply_markup: {
             inline_keyboard: keyboard
           },
@@ -874,14 +879,14 @@ bot.on('text', async (ctx) => {
     if (action === 'create') {
       if (type === 'ssh') {
         state.step = `password_${state.action}_${state.type}`;
-        await ctx.reply('🔑 *Masukkan password:*', { parse_mode: 'Markdown' });
+        await ctx.reply('🔑 *ᴍᴀsᴜᴋᴋᴀɴ ᴘᴀssᴡᴏʀᴅ 6 ᴋᴀʀᴀᴋᴛᴇʀ:*', { parse_mode: 'Markdown' });
       } else {
         state.step = `exp_${state.action}_${state.type}`;
-        await ctx.reply('⏳ *Masukkan masa aktif (hari):*', { parse_mode: 'Markdown' });
+        await ctx.reply('⏳ *ᴍᴀsᴜᴋᴋᴀɴ ᴍᴀsᴀ ᴀᴋᴛɪғ (ʜᴀʀɪ):*', { parse_mode: 'Markdown' });
       }
     } else if (action === 'renew') {
       state.step = `exp_${state.action}_${state.type}`;
-      await ctx.reply('⏳ *Masukkan masa aktif (hari):*', { parse_mode: 'Markdown' });
+      await ctx.reply('⏳ *ᴍᴀsᴜᴋᴋᴀɴ ᴍᴀsᴀ ᴀᴋᴛɪғ (ʜᴀʀɪ):*', { parse_mode: 'Markdown' });
     }
   } else if (state.step.startsWith('password_')) {
     state.password = ctx.message.text.trim();
@@ -895,11 +900,11 @@ bot.on('text', async (ctx) => {
       return ctx.reply('❌ *Password tidak boleh mengandung karakter khusus atau spasi.*', { parse_mode: 'Markdown' });
     }
     state.step = `exp_${state.action}_${state.type}`;
-    await ctx.reply('⏳ *Masukkan masa aktif (hari):*', { parse_mode: 'Markdown' });
+    await ctx.reply('⏳ *ᴍᴀsᴜᴋᴋᴀɴ ᴍᴀsᴀ ᴀᴋᴛɪғ (ʜᴀʀɪ):*', { parse_mode: 'Markdown' });
   } else if (state.step.startsWith('exp_')) {
     const expInput = ctx.message.text.trim();
     if (!/^\d+$/.test(expInput)) {
-      return ctx.reply('❌ *Masa aktif tidak valid. Masukkan angka yang valid.*', { parse_mode: 'Markdown' });
+      return ctx.reply('❌ *ᴍᴀsᴀ ᴀᴋᴛɪғ ᴛɪᴅᴀᴋ ᴠᴀʟɪᴅ. ᴍᴀsᴜᴋᴋᴀɴ ᴀɴɢᴋᴀ ʏᴀɴɢ ᴠᴀʟɪᴅ.*', { parse_mode: 'Markdown' });
     }
     const exp = parseInt(expInput, 10);
     if (isNaN(exp) || exp <= 0) {
@@ -952,7 +957,7 @@ bot.on('text', async (ctx) => {
           const saldo = user.saldo;
 
           if (saldo < totalHarga) {
-            return ctx.reply('❌ *Saldo Anda tidak mencukupi untuk melakukan transaksi ini.*', { parse_mode: 'Markdown' });
+            return ctx.reply('❌ *sᴀʟᴅᴏ ᴀɴᴅᴀ ᴛɪᴅᴀᴋ ᴍᴇɴᴄᴜᴋᴜᴘɪ ᴜɴᴛᴜᴋ ᴍᴇʟᴀᴋᴜᴋᴀɴ ᴛʀᴀɴsᴀᴋsɪ ɪɴɪ.*', { parse_mode: 'Markdown' });
           }
           if (action === 'create') {
             if (type === 'vmess') {
@@ -2030,10 +2035,10 @@ async function handleDepositState(ctx, userId, data) {
     currentAmount = currentAmount.slice(0, -1);
   } else if (data === 'confirm') {
     if (currentAmount.length === 0) {
-      return await ctx.answerCbQuery('⚠️ Jumlah tidak boleh kosong!', { show_alert: true });
+      return await ctx.answerCbQuery('⚠️ ᴊᴜᴍʟᴀʜ ᴛɪᴅᴀᴋ ʙᴏʟᴇʜ ᴋᴏsᴏɴɢ!', { show_alert: true });
     }
-    if (parseInt(currentAmount) < 200) {
-      return await ctx.answerCbQuery('⚠️ Jumlah minimal adalah 200 perak!', { show_alert: true });
+    if (parseInt(currentAmount) < 1000) {
+      return await ctx.answerCbQuery('⚠️ ᴊᴜᴍʟᴀʜ ᴍɪɴɪᴍᴀʟ ᴀᴅᴀʟᴀʜ  1000!', { show_alert: true });
     }
     global.depositState[userId].action = 'confirm_amount';
     await processDeposit(ctx, currentAmount);
@@ -2281,10 +2286,10 @@ async function processDeposit(ctx, amount) {
       const qrcodeUrl = data.qrcode_url;
 
       await ctx.replyWithPhoto(qrcodeUrl, {
-        caption: `🌟 *Informasi Deposit Anda* 🌟\n\n💼 *Jumlah:* Rp ${amount}\n🎉 *Segera selesaikan pembayaran Anda untuk menikmati saldo baru!*`,
+        caption: `🗣️ *ɪɴғᴏʀᴍᴀsɪ ᴅᴇᴘᴏsɪᴛ ᴀɴᴅᴀ* 💥\n\n *ᴊᴜᴍʟᴀʜ:* ʀᴘ ${amount}\n *sᴇɢᴇʀᴀ sᴇʟᴇsᴀɪᴋᴀɴ ᴘᴇᴍʙᴀʏᴀʀᴀɴ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴀᴋᴜɴ *`,
         parse_mode: 'Markdown'
       });
-      console.log(`✅ Permintaan deposit berhasil untuk user ${userId}, jumlah: Rp ${amount}`);
+      console.log(`✅ ᴘᴇʀᴍɪɴᴛᴀᴀɴ ᴅᴇᴘᴏsɪᴛ ʙᴇʀʜᴀsɪʟ ᴜɴᴛᴜᴋ ᴜsᴇʀ ${userId}, ᴊᴜᴍʟᴀʜ: ʀᴘ ${amount}`);
     } else {
       console.error('⚠️ Permintaan deposit gagal:', response.data.message);
       await ctx.reply(`⚠️ *Permintaan deposit gagal:* ${response.data.message}`, { parse_mode: 'Markdown' });
@@ -2369,10 +2374,10 @@ app.post('/callback/paydisini', async (req, res) => {
 
           db.run("UPDATE users SET saldo = saldo + ? WHERE user_id = ?", [amount, user_id], function(err) {
               if (err) {
-                  console.error(`Kesalahan saat memperbarui saldo untuk user_id: ${user_id}, amount: ${JSON.stringify(amount)}`, err.message);
+                  console.error(`Kesalahan saat memperbarui saldo untuk user_id: ${user_id}, ᴀᴍᴏᴜɴᴛ: ${JSON.stringify(amount)}`, err.message);
                   return res.status(500).send('Kesalahan saat memperbarui saldo');
               }
-              console.log(`✅ Saldo berhasil diperbarui untuk user_id: ${user_id}, amount: ${JSON.stringify(amount)}`);
+              console.log(`✅ sᴀʟᴅᴏ ʙᴇʀʜᴀsɪʟ ᴅɪᴘᴇʀʙᴀʀᴜɪ ᴜɴᴛᴜᴋ ᴜsᴇʀ_ɪᴅ: ${user_id}, ᴀᴍᴏᴜɴᴛ: ${JSON.stringify(amount)}`);
 
               delete global.pendingDeposits[unique_code];
 
@@ -2382,7 +2387,7 @@ app.post('/callback/paydisini', async (req, res) => {
                       return res.status(500).send('⚠️ Kesalahan saat mengambil saldo terbaru');
                   }
                   const newSaldo = row.saldo;
-                  const message = `✅ Deposit berhasil!\n\n💰 Jumlah: Rp ${amount}\n💵 Saldo sekarang: Rp ${newSaldo}`;
+                  const message = `✅ ᴅᴇᴘᴏsɪᴛ ʙᴇʀʜᴀsɪʟ!\n\n💰 ᴊᴜᴍʟᴀʜ: ʀᴘ ${amount}\n💵 sᴀʟᴅᴏ sᴇᴋᴀʀᴀɴɢ: ʀᴘ ${newSaldo}`;
                 
                   const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
                   axios.post(telegramUrl, {
