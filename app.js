@@ -112,9 +112,6 @@ async function sendMainMenu(ctx) {
       { text: '〘 ᴛᴏᴘ ᴜᴘ ᴏᴛᴏᴍᴀᴛɪs 〙', callback_data: 'topup_saldo' },
       { text: '〘 ᴄᴇᴋ sᴀʟᴅᴏ 〙', callback_data: 'cek_saldo' }
     ],
-    [
-      { text: '〘 ᴄᴏsᴛᴜᴍᴇʀ sᴇʀᴠɪᴄᴇ 〙', callback_data: 'https://t.me/ceria_shop' },
-      { text: '〘 ɢʀᴜʙ ᴘᴜʙʟɪᴋ 〙', callback_data: 'https://t.me/pasar_vpn' }
   ];
 
   const uptime = os.uptime();
@@ -153,7 +150,7 @@ async function sendMainMenu(ctx) {
 
   const messageText = `*sᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ ᴅɪ ${NAMA_STORE},*
 🧿━━━━━━━━━━━━━━━━━━━━━━━━🧿
-ʙᴏᴛ ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴛᴏᴍᴀᴛɪs ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʟɪ
+ʙᴏᴛ ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴏᴛᴏᴍᴀᴛɪs ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʟɪ
 ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴅᴇɴɢᴀɴ ᴍᴜᴅᴀʜ ᴅᴀɴ ᴄᴇᴘᴀᴛ
 ɴɪᴋᴍᴀᴛɪ ᴋᴇᴍᴜᴅᴀʜᴀɴ ᴅᴀɴ ᴋᴇᴄᴇᴘᴀᴛᴀɴ
 ᴅᴀʟᴀᴍ ʟᴀʏᴀɴᴀɴ ᴠᴘɴ ᴅᴇɴɢᴀɴ ʙᴏᴛ ᴋᴀᴍɪ!
@@ -161,7 +158,7 @@ async function sendMainMenu(ctx) {
 ⏳ *ᴜᴘᴛɪᴍᴇ ʙᴏᴛ:* ${days} Hari
 🌐 *sᴇʀᴠᴇʀ ᴛᴇʀsᴇᴅɪᴀ:* ${jumlahServer}
 👥 *ᴊᴜᴍʟᴀʜ ᴘᴇɴɢɢᴜɴᴀ:* ${jumlahPengguna}
-📣 *ᴀᴜᴛʜᴏʀ: [ᴋʟɪᴋ ᴅɪ sɪɴɪ](https://t.me/ceria_shop) 
+📣 *ᴀᴜᴛʜᴏʀ:* @ceria_shop
 🧿━━━━━━━━━━━━━━━━━━━━━━━━🧿
 🆔 *ɪᴅ ᴀɴᴅᴀ:* ${userId}
 *sɪʟᴀᴋᴀɴ ᴘɪʟɪʜ ᴏᴘsɪ ʟᴀʏᴀɴᴀɴ:*`;
