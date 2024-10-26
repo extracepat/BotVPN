@@ -19,7 +19,7 @@ const PAYDISINI_KEY = vars.PAYDISINI_KEY;
 const BOT_TOKEN = vars.BOT_TOKEN;
 const port = vars.PORT || 50123;
 const ADMIN = vars.USER_ID; 
-const NAMA_STORE = vars.NAMA_STORE || '@FTVPNSTORES';
+const NAMA_STORE = vars.NAMA_STORE || '@ceria_shop';
 const bot = new Telegraf(BOT_TOKEN);
 const adminIds = ADMIN;
 console.log('Bot initialized');
@@ -148,16 +148,22 @@ async function sendMainMenu(ctx) {
     console.error('Kesalahan saat mengambil jumlah pengguna:', err.message);
   }
 
-  const messageText = `*Selamat datang di ${NAMA_STORE},
-Powered by @ceria_shop* 🚀
-Bot VPN serba otomatis untuk membeli
-layanan VPN dengan mudah dan cepat
-Nikmati kemudahan dan kecepatan
-dalam layanan VPN dengan bot kami!
+  const messageText = `
+╭━━━[ *Selamat Datang di ${NAMA_STORE}* ]━━━╮
+               _Powered by FTVPN_ 🚀
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
 
-⏳ *Uptime bot:* ${days} Hari
-🌐 *Server tersedia:* ${jumlahServer}
-👥 *Jumlah pengguna:* ${jumlahPengguna}
+💻 Bot VPN otomatis untuk membeli layanan VPN
+   dengan mudah, cepat, dan aman. Nikmati
+   kemudahan dan kecepatan dalam layanan
+   VPN kami!
+
+━━━━━━━━━🔰 Informasi Layanan 🔰━━━━━━━━━
+⏳ *Uptime Bot:* ${days} Hari
+🌐 *Server Tersedia:* ${jumlahServer} Server
+👥 *Jumlah Pengguna:* ${jumlahPengguna} Pengguna
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ Nikmati pengalaman internet tanpa batas!
 
 *Silakan pilih opsi layanan:*`;
 
