@@ -149,21 +149,27 @@ async function sendMainMenu(ctx) {
   }
 
   const messageText = `
-╭━━━[ *Selamat Datang di ${NAMA_STORE}* ]━━━╮
-               _Powered by FTVPN_ 🚀
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
 
-💻 Bot VPN otomatis untuk membeli layanan VPN
-   dengan mudah, cepat, dan aman. Nikmati
-   kemudahan dan kecepatan dalam layanan
-   VPN kami!
+╔═✦ [ *Selamat Datang di ${NAMA_STORE}* ] ✦══╗
+        🚀 _RESELLER MURAH_ 🚀
+╚══════════════════════╝
 
-━━━━━━━━━🔰 Informasi Layanan 🔰━━━━━━━━━
-⏳ *Uptime Bot:* ${days} Hari
-🌐 *Server Tersedia:* ${jumlahServer} Server
-👥 *Jumlah Pengguna:* ${jumlahPengguna} Pengguna
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚡ Nikmati pengalaman internet tanpa batas!
+🌐 SERVER DIGITAL OCEAN 🇸🇬
+
+🌐 SERVER RUMAH WEB ID 🇮🇩 
+
+⚠️*DEPOSIT* ⚠️
+\`\`\`
+Trial Mengikuti Harga Perhari 
+Saldo Akan Otomatis Masuk 1-2 menit
+\`\`\`
+🌈━━━━🔥 *INFO LAYANAN* 🔥━━━🌈
+⏳ *Bot Aktif:* ${days} Hari
+🌍 *Server Tersedia:* ${jumlahServer} Server
+👥 *Pengguna Terdaftar:* ${jumlahPengguna} Pengguna
+🌈━━━━━━━━━━━━━━━━━━━━━🌈
+🔒 Bergabunglah Sekarang dan Nikmati Kebebasan Internet! 🔥
+
 
 *Silakan pilih opsi layanan:*`;
 
